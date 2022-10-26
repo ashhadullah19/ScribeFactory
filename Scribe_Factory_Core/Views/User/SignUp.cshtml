@@ -1,0 +1,227 @@
+﻿@model Scribe_Factory_Core.Common.RegisterUserViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="~/js/notify.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Bootstrap-icon-link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+    <!-- google-font-link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>SignUp</title>
+    <style type="text/css">
+        .notifyjs-bootstrap-base{
+            font-weight:700;
+            font-size:13px;
+        }
+        body {
+            background-color: #C6C6C6;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #Signup-form {
+            margin-top: 55px;
+            margin-bottom: 55px;
+        }
+
+            #Signup-form .signup-form-1 {
+                background-color: white;
+                width: 100%;
+                height: auto;
+                padding: 24px 40px;
+                border-radius: 10px;
+            }
+
+                #Signup-form .signup-form-1 h5 {
+                    text-align: center;
+                    font-size: 25px;
+                    font-weight: 600;
+                    color: #1DC68D;
+                }
+
+                #Signup-form .signup-form-1 #First-Name-div input {
+                    width: 100%;
+                    padding: 13px 9px;
+                    margin-top: 11px;
+                    border: 1px solid #D0D0D0;
+                    border-radius: 6px;
+                }
+
+                #Signup-form .signup-form-1 #First-Name-div {
+                    margin-top: 21px;
+                }
+
+                #Signup-form .signup-form-1 .form-group placeholder {
+                    font-size: 12px;
+                }
+
+                #Signup-form .signup-form-1 #Last-Name-div input {
+                    width: 100%;
+                    padding: 13px 9px;
+                    margin-top: 11px;
+                    border: 1px solid #D0D0D0;
+                    border-radius: 6px;
+                }
+
+            #Signup-form .signup-form-1 {
+                font-size: 12px;
+            }
+
+                #Signup-form .signup-form-1 #Last-Name-div {
+                    margin-top: 21px;
+                }
+
+                #Signup-form .signup-form-1 #Password-div input {
+                    width: 100%;
+                    padding: 13px 9px;
+                    margin-top: 11px;
+                    border: 1px solid #D0D0D0;
+                    border-radius: 6px;
+                }
+
+                #Signup-form .signup-form-1 #Password-div {
+                    margin-top: 21px;
+                }
+
+                #Signup-form .signup-form-1 #Password-repeat-div input {
+                    width: 100%;
+                    padding: 13px 9px;
+                    margin-top: 11px;
+                    border: 1px solid #D0D0D0;
+                    border-radius: 6px;
+                }
+
+                #Signup-form .signup-form-1 #Password-repeat-div {
+                    margin-top: 21px;
+                }
+
+                #Signup-form .signup-form-1 .form-group input {
+                    width: 100%;
+                    padding: 10px 8px;
+                    margin-top: 11px;
+                    border: 1px solid #D0D0D0;
+                    border-radius: 6px;
+                    font-size: 11px;
+                }
+
+                #Signup-form .signup-form-1 .form-group {
+                    margin-top: 21px;
+                }
+
+                #Signup-form .signup-form-1 .control-label .Create-btn {
+                    background-color: #1DC68D !important;
+                    border: none;
+                    font-size: 12px;
+                    padding: 13px 75px;
+                }
+
+                #Signup-form .signup-form-1 #Create-Account-div {
+                    text-align: center;
+                    margin-top: 40px;
+                }
+
+                #Signup-form .signup-form-1 span {
+                    color: #1DC68D;
+                    font-weight: 600;
+                }
+
+                #Signup-form .signup-form-1 p {
+                    font-size: 13px;
+                    padding-top: 40px;
+                }
+    </style>
+</head>
+<body>
+    <section id="Signup-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-5">
+                    <div id="">
+                        <form asp-action="SignUp" asp-controller="User" method="post" class="signup-form-1">
+                            <h5>Sign up to join us</h5>
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="FirstName" class="control-label"></label>
+                                <input asp-for="FirstName" class="form-control" placeholder="Enter your First Name" />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="LastName" class="control-label"></label>
+                                <input asp-for="LastName" class="form-control" placeholder="Enter your Last Name" />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" class="form-control" placeholder="Enter your Email" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Password" class="control-label">Password</label>
+                                <input asp-for="Password" class="form-control" placeholder="Enter your Password" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ConfirmPassword" class="control-label">Confirm Password</label>
+                                <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm your password" />
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Country" class="control-label"></label>
+                                <input asp-for="Country" class="form-control" placeholder="Enter your Country" />
+                                <span asp-validation-for="Country" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="City" class="control-label"></label>
+                                <input asp-for="City" class="form-control" placeholder="Enter your City" />
+                                <span asp-validation-for="City" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="State" class="control-label"></label>
+                                <input asp-for="State" class="form-control" placeholder="Enter your State" />
+                                <span asp-validation-for="State" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Zip" class="control-label"></label>
+                                <input asp-for="Zip" class="form-control" placeholder="Enter your Zip" />
+                                <span asp-validation-for="Zip" class="text-danger"></span>
+                            </div>
+
+                            <div id="Create-Account-div">
+                                <button type="submit" class="btn btn-primary Create-btn">Create Account</button>
+                            </div>
+                            <p>By continuing, You agree with our <span>Terms Of Services</span></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    @if (!string.IsNullOrEmpty(ViewBag.UserExist))
+    {
+        <script type="text/javascript">
+            
+            $.notify.defaults({ globalPosition: 'bottom right' })
+            $.notify("@ViewBag.UserExist", "info");
+        </script>
+    }
+
+</body>
+</html>

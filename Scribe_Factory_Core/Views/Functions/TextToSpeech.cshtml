@@ -1,0 +1,309 @@
+﻿
+@{
+    ViewData["Title"] = "TextToSpeech";
+}
+<div class="container-fluid" id="functions">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h5>Give us your choice by selecting filters below.</h5>
+
+            <div class="txt-speech-div-selct">
+                <div style="margin-bottom:20px">
+                    <input type="text" name="ProjectName" id="ProjectName" placeholder="Any name on your mind for the project? " style="        width: 50%;
+        padding: 8px;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, .1) !important;" required>
+                </div>
+                <select name="Gender" id="Gender">
+                    <option value="">Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <select name="Language" id="Language">
+                    <option value="">Languages</option>
+                </select>
+                <select name="Voice" id="Voice">
+                    <option value="">Voice</option>
+                </select>
+                @*<select name="" id="">
+                        <option value="">Speed</option>
+                        <option value="">Very Slow</option>
+                        <option value="">Slow</option>
+                        <option value="">Normal</option>
+                        <option value="">Fast</option>
+                        <option value="">Very Fast</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="">Pronunciation</option>
+                        <option value="">American Pronunciation</option>
+                        <option value="">Chinese Pronunciation</option>
+                        <option value="">British Pronunciation</option>
+                        <option value="">Australian Pronunciation</option>
+                        <option value="">African Pronunciation</option>
+                        <option value="">Asian Pronunciationn</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="">Voice Style</option>
+                        <option value="">Loud</option>
+                        <option value="">Low</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="">Change Function</option>
+                        <option value="">Option 1</option>
+                        <option value="">Option 2</option>
+                    </select>*@
+            </div>
+
+        </div>
+        <div class="col-md-12">
+            <div class="row mt-5">
+                <div class="col-11">
+                    <div class="txt-to-spech-div">
+                        <div class="txt-spch-txtbox">
+                            <textarea class="form-control " style="height:100px;" id="validationTextarea" disabled placeholder="Enter Text here" required></textarea>
+
+                        </div>
+                        <div class="str-bin">
+                            <ul>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                    </svg>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                    </svg>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-span" style="display:flex">
+                            <button id="play" class="ply-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                    <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z" />
+                                </svg>
+                            </button>
+                            <audio controls id="player">
+                                <source id="AudioStream" src="temp.mp3" type="audio/mpeg">
+                            </audio>
+                            <span class="ply-span"><small>350 / 250</small></span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-1">
+                    <div class="txt-spch-plus">
+                        <span>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="col-md-10">
+            <div class="xport-main-div" style="justify-content: flex-start;">
+                <h4 id="cost"></h4>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="xport-main-div">
+                <div>
+                    <a href="">
+                        <button id="SaveProject">Export</button>
+                        <label id="HiddenProjectId" hidden></label>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/notify-combined.min.js"></script>
+        <script type="text/javascript">
+
+            //jQuery.notify.notify("Click me!", { position: "bottom right", className: "success" });
+            $(document).ready(function () {
+
+
+                //function will be called on button click having id btnsave
+                $("#Gender").change(function () {
+                    debugger;
+
+                    ShowLoader();
+                    var gender = this.value;
+                    if (gender == "") {
+
+                        //jQuery.notify.notify.defaults({ globalPosition: 'bottom right' });
+                        jQuery.notify("Please Select a valid Gender", { position: "bottom right", className: "warn" });
+                    }
+                    if (gender != "") {
+                        $.ajax(
+                            {
+                                type: "Get", //HTTP POST Method
+                                url: "GetLanguagesAgainstGender", // Controller/View
+                                data: { gender: gender },
+                                dataType: "json",
+                                success: function (response) {
+                                    if (response) {
+                                        debugger;
+                                        document.getElementById('Language').innerHTML = "";
+                                        for (var i = 0; i < response.length; i++) {
+                                            var opt = document.createElement('option');
+                                            opt.value = response[i].languageCode;
+                                            opt.innerHTML = response[i].languageName;
+                                            document.getElementById('Language').appendChild(opt);
+                                        }
+                                        HideLoader();
+                                    }
+                                    else {
+                                        jQuery.notify("Please try again", { position: "bottom right", className: "warn" });
+                                        HideLoader();
+                                    }
+                                }
+                            });
+                    }
+                });
+                $("#Language").change(function () {
+                    debugger;
+
+                    ShowLoader();
+                    var Language = this.value;
+                    var gender = $('#Gender').find(":selected").val();
+                    if (Language == "") {
+                        jQuery.notify("Please Select a valid Language", { position: "bottom right", className: "warn" });
+                    }
+                    if (gender == "") {
+                        jQuery.notify("Please Select a valid Gender", { position: "bottom right", className: "warn" });
+                    }
+                    if (gender != "" && Language != "") {
+                        $.ajax(
+                            {
+                                type: "Get", //HTTP POST Method
+                                url: "getVoicesAgainstLangugae", // Controller/View
+                                data: { LanguageCode: Language, gender: gender },
+                                dataType: "json",
+                                success: function (response) {
+                                    if (response) {
+                                        debugger;
+                                        document.getElementById('Voice').innerHTML = "";
+                                        for (var i = 0; i < response.length; i++) {
+                                            var opt = document.createElement('option');
+                                            opt.value = response[i].id;
+                                            opt.innerHTML = response[i].name;
+                                            document.getElementById('Voice').appendChild(opt);
+                                            HideLoader();
+                                        }
+                                    }
+                                    else {
+                                        jQuery.notify("Please try again", { position: "bottom right", className: "warn" });
+                                        HideLoader();
+                                    }
+                                }
+                            });
+                    }
+                });
+
+                $("#Voice").change(function () {
+                    debugger;
+                    var Voice = this.value;
+                    if (Voice != "") {
+                        $('#validationTextarea')[0].disabled = false;
+                    }
+                });
+                $("#play").click(function () {
+                    debugger;
+
+                    ShowLoader();
+                    var text = $('#validationTextarea')[0].value;
+                    var ProjectName = $('#ProjectName')[0].value;
+                    var voiceId = $('#Voice').find(":selected").val();
+                    if (ProjectName == "") {
+                        jQuery.notify("Provide a name please", { position: "bottom right", className: "warn" });
+                    }
+                    else if (text != "" && voiceId != "") {
+                        $.ajax(
+                            {
+                                type: "Post", //HTTP POST Method
+                                url: "PlayAudio", // Controller/View
+                                dataType: "json",
+                                data: {
+                                    text: text,
+                                    VoiceId: voiceId,
+                                    projectName: ProjectName,
+                                    ProjectType: "Text To Speech"
+                                },
+                                success: function (response) {
+                                    debugger;
+                                    if (response != false) {
+                                        debugger;
+                                        $('#AudioStream')[0].src = response;
+                                        $('#player')[0].load();
+                                        $('#player')[0].play();
+
+                                        $('#cost')[0].innerHTML = 'COST : ' + Math.floor(Math.random() * 100) + '$';
+                                        $/*('#AudioStream')[0].oncanplaythrough=audio[0].play();*/
+                                        HideLoader();
+                                    }
+                                    else {
+                                        jQuery.notify("Please try again", { position: "bottom right", className: "warn" });
+                                        HideLoader();
+                                    }
+                                }
+                            });
+                    }
+
+                });
+
+                $("#SaveProject").click(function () {
+                    debugger;
+
+                    ShowLoader();
+                    var text = $('#validationTextarea')[0].value;
+                    var ProjectName = $('#ProjectName')[0].value;
+                    var voiceId = $('#Voice').find(":selected").val();
+                    if (ProjectName == "") {
+                        jQuery.notify("Provide a name please", { position: "bottom right", className: "warn" });
+                    }
+                    else if (text != "" && voiceId != "") {
+                        $.ajax(
+                            {
+                                type: "Post", //HTTP POST Method
+                                url: "ConvertTextToSpeech", // Controller/View
+                                dataType: "json",
+                                data: {
+                                    text: text,
+                                    VoiceId: voiceId,
+                                    projectName: ProjectName,
+                                    ProjectType: "Text To Speech"
+                                },
+                                success: function (response) {
+                                    debugger;
+                                    if (response != false) {
+                                        jQuery.notify("Project Created Successfully", { position: "bottom right", className: "success" });
+                                        window.location = "/Home/Dashboard";
+                                        HideLoader();
+                                        debugger;
+                                    }
+                                    else {
+                                        jQuery.notify("Please try again", { position: "bottom right", className: "warn" });
+                                        HideLoader();
+                                    }
+                                }
+                            });
+                    }
+
+                });
+
+            });
+        </script>
+    </div>
+</div>
+

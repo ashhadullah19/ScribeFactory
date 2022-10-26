@@ -1,0 +1,288 @@
+﻿USE [ScribeDB]
+GO
+SET IDENTITY_INSERT [dbo].[Tenants] ON 
+GO
+INSERT [dbo].[Tenants] ([Id], [Name], [CreatedDate], [IsActive]) VALUES (2, N'Test1', CAST(N'2022-09-24T00:00:00.0000000' AS DateTime2), 1)
+GO
+SET IDENTITY_INSERT [dbo].[Tenants] OFF
+GO
+SET IDENTITY_INSERT [dbo].[ApplicatioUsers] ON 
+GO
+INSERT [dbo].[ApplicatioUsers] ([Id], [TenantId], [FirstName], [LastName], [Email], [PasswordHash], [Country], [City], [State], [Zip]) VALUES (1, 2, N'Ashhad', N'Ullah', N'ashhad@gmail.com', N'253acb401ca5ef629fb17e520cfc64e6', N'Pakistan', N'Karachi', NULL, NULL)
+GO
+INSERT [dbo].[ApplicatioUsers] ([Id], [TenantId], [FirstName], [LastName], [Email], [PasswordHash], [Country], [City], [State], [Zip]) VALUES (4, 2, N'ashhad', N'ullah', N'ashhad1@gmail.com', N'253acb401ca5ef629fb17e520cfc64e6', N'Pakistan', N'Karachi', N'Sindh', N'74600')
+GO
+SET IDENTITY_INSERT [dbo].[ApplicatioUsers] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Languages] ON 
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Afrikaans', N'af', 1)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Albanian', N'sq', 2)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Amharic', N'am', 3)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Arabic', N'ar', 4)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Armenian', N'hy', 5)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Assamese*', N'as', 6)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Aymara*', N'ay', 7)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Azerbaijani', N'az', 8)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Bambara*', N'bm', 9)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Basque', N'eu', 10)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Belarusian', N'be', 11)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Bengali', N'bn', 12)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Bhojpuri*', N'bho', 13)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Bosnian', N'bs', 14)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Bulgarian', N'bg', 15)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Catalan', N'ca', 16)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Cebuano', N'ceb', 17)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Chinese (Simplified)', N'zh-CN', 18)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Chinese (Traditional)', N'zh-TW', 19)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Corsican', N'co', 20)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Croatian', N'hr', 21)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Czech', N'cs', 22)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Danish', N'da', 23)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Dhivehi*', N'dv', 24)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Dogri*', N'doi', 25)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Dutch', N'nl', 26)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'English', N'en', 27)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Esperanto', N'eo', 28)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Estonian', N'et', 29)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Ewe*', N'ee', 30)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Filipino (Tagalog)', N'fil', 31)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Finnish', N'fi', 32)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'French', N'fr', 33)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Frisian', N'fy', 34)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Galician', N'gl', 35)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Georgian', N'ka', 36)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'German', N'de', 37)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Greek', N'el', 38)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Guarani*', N'gn', 39)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Gujarati', N'gu', 40)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Haitian Creole', N'ht', 41)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Hausa', N'ha', 42)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Hawaiian', N'haw', 43)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Hebrew', N'he or iw', 44)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Hindi', N'hi', 45)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Hmong', N'hmn', 46)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Hungarian', N'hu', 47)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Icelandic', N'is', 48)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Igbo', N'ig', 49)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Ilocano*', N'ilo', 50)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Indonesian', N'id', 51)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Irish', N'ga', 52)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Italian', N'it', 53)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Japanese', N'ja', 54)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Javanese', N'jv', 55)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Kannada', N'kn', 56)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Kazakh', N'kk', 57)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Khmer', N'km', 58)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Kinyarwanda', N'rw', 59)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Konkani*', N'gom', 60)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Korean', N'ko', 61)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Krio*', N'kri', 62)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Kurdish', N'ku', 63)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Kurdish (Sorani)*', N'ckb', 64)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Kyrgyz', N'ky', 65)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Lao', N'lo', 66)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Latin', N'la', 67)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Latvian', N'lv', 68)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Lingala*', N'ln', 69)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Lithuanian', N'lt', 70)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Luganda*', N'lg', 71)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Luxembourgish', N'lb', 72)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Macedonian', N'mk', 73)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Maithili*', N'mai', 74)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Malagasy', N'mg', 75)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Malay', N'ms', 76)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Malayalam', N'ml', 77)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Maltese', N'mt', 78)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Maori', N'mi', 79)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Marathi', N'mr', 80)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Meiteilon (Manipuri)*', N'mni-Mtei', 81)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Mizo*', N'lus', 82)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Mongolian', N'mn', 83)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Myanmar (Burmese)', N'my', 84)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Nepali', N'ne', 85)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Norwegian', N'no', 86)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Nyanja (Chichewa)', N'ny', 87)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Odia (Oriya)', N'or', 88)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Oromo*', N'om', 89)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Pashto', N'ps', 90)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Persian', N'fa', 91)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Polish', N'pl', 92)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Portuguese (Portugal', N' Brazil)', 93)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Punjabi', N'pa', 94)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Quechua*', N'qu', 95)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Romanian', N'ro', 96)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Russian', N'ru', 97)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Samoan', N'sm', 98)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Sanskrit*', N'sa', 99)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Scots Gaelic', N'gd', 100)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Sepedi*', N'nso', 101)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Serbian', N'sr', 102)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Sesotho', N'st', 103)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Shona', N'sn', 104)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Sindhi', N'sd', 105)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Sinhala (Sinhalese)', N'si', 106)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Slovak', N'sk', 107)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Slovenian', N'sl', 108)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Somali', N'so', 109)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Spanish', N'es', 110)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Sundanese', N'su', 111)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Swahili', N'sw', 112)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Swedish', N'sv', 113)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Tagalog (Filipino)', N'tl', 114)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Tajik', N'tg', 115)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Tamil', N'ta', 116)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Tatar', N'tt', 117)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Telugu', N'te', 118)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Thai', N'th', 119)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Tigrinya*', N'ti', 120)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Tsonga*', N'ts', 121)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Turkish', N'tr', 122)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Turkmen', N'tk', 123)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Twi (Akan)*', N'ak', 124)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Ukrainian', N'uk', 125)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Urdu', N'ur', 126)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Uyghur', N'ug', 127)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Uzbek', N'uz', 128)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Vietnamese', N'vi', 129)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Welsh', N'cy', 130)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Xhosa', N'xh', 131)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Yiddish', N'yi', 132)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Yoruba', N'yo', 133)
+GO
+INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Zulu', N'zu', 134)
+GO
+SET IDENTITY_INSERT [dbo].[Languages] OFF
+GO
