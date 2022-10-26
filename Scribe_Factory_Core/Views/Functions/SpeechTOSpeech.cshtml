@@ -85,7 +85,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12" style="margin-top:4% ;display: none"id="texttospeechDiv"">
+        <div class="col-md-12" style="margin-top:4% ;display: none" id="texttospeechDiv" ">
 
 
             <div class="txt-speech-div-selct">
@@ -115,7 +115,7 @@
                     </svg>
                 </button>
                 <audio controls id="player">
-                    <source id="AudioStream" src="temp.mp3" type="audio/mpeg">
+                    <source id="AudioStream" src="" type="audio/mpeg">
                 </audio>
             </div>
 
@@ -137,12 +137,12 @@
                 </div>
             </div>
         </div>
-        
+
 
         <script src="/js/notify-combined.min.js"></script>
         <script type="text/javascript">
 
-            //jQuery.notify.notify("Click me!", { position: "bottom right", className: "success" });
+            //jQuery.notify.notify("Click me!", { position: "top right", className: "success" });
             $(document).ready(function () {
                 //$("#FileUploadForm").submit(function (e) {
                 //    e.preventDefault();
@@ -156,8 +156,8 @@
                     var files = fileUpload.files;
                     if (files.length == 0) {
 
-                        //jQuery.notify.notify.defaults({ globalPosition: 'bottom right' });
-                        jQuery.notify("Please upload a file first!", { position: "bottom right", className: "warn" });
+                        //jQuery.notify.notify.defaults({ globalPosition: 'top right' });
+                        jQuery.notify("Please upload a file first!", { position: "top right", className: "warn" });
                     }
                     if (files.length != 0) {
                         var fileData = new FormData();
@@ -183,6 +183,8 @@
 
                                         $('#cost')[0].innerHTML = 'COST : ' + Math.floor(Math.random() * 100) + '$';
                                         HideLoader();
+
+                                        window.scrollTo(0, document.body.scrollHeight);
                                     }
                                     else {
 
@@ -201,10 +203,28 @@
                     var text = $('#validationTextarea')[0].value;
                     var ProjectName = $('#ProjectName')[0].value;
                     var voiceId = $('#Voice').find(":selected").val();
-                    if (ProjectName == "") {
-                        jQuery.notify("Provide a name please", { position: "bottom right", className: "warn" });
+                    var gender = $('#Gender').find(":selected").val();
+                    if (Language == "") {
+                        jQuery.notify("Please Select a valid Language", { position: "top right", className: "warn" });
+                        HideLoader();
                     }
-                    else if (text != "" && voiceId != "") {
+                    if (gender == "") {
+                        jQuery.notify("Please Select a valid Gender", { position: "top right", className: "warn" });
+                        HideLoader();
+                    }
+                    if (ProjectName == "") {
+                        jQuery.notify("Provide a name please", { position: "top right", className: "warn" });
+                        HideLoader();
+                    }
+                    if (voiceId == "") {
+                        jQuery.notify("Provide a voice please", { position: "top right", className: "warn" });
+                        HideLoader();
+                    }
+                    else if (text == "") {
+                        jQuery.notify("Provide a text please", { position: "top right", className: "warn" });
+                        HideLoader();
+                    }
+                    else if (text != "" && voiceId != "" && ProjectName != "" && gender != "" && Language != "") {
                         $.ajax(
                             {
                                 type: "Post", //HTTP POST Method
@@ -219,17 +239,20 @@
                                 success: function (response) {
                                     debugger;
                                     if (response != false) {
-                                        jQuery.notify("Project Created Successfully", { position: "bottom right", className: "success" });
+                                        jQuery.notify("Project Created Successfully", { position: "top right", className: "success" });
                                         window.location = "/Home/Dashboard";
                                         HideLoader();
                                         debugger;
                                     }
                                     else {
-                                        jQuery.notify("Please try again", { position: "bottom right", className: "warn" });
+                                        jQuery.notify("Please try again", { position: "top right", className: "warn" });
                                         HideLoader();
                                     }
                                 }
                             });
+                    }
+                    else {
+                        HideLoader();
                     }
 
                 });
@@ -241,8 +264,9 @@
                     var gender = this.value;
                     if (gender == "") {
 
-                        //jQuery.notify.notify.defaults({ globalPosition: 'bottom right' });
-                        jQuery.notify("Please Select a valid Gender", { position: "bottom right", className: "warn" });
+                        //jQuery.notify.notify.defaults({ globalPosition: 'top right' });
+                        jQuery.notify("Please Select a valid Gender", { position: "top right", className: "warn" });
+                        HideLoader();
                     }
                     if (gender != "") {
                         $.ajax(
@@ -255,6 +279,11 @@
                                     if (response) {
                                         debugger;
                                         document.getElementById('Language').innerHTML = "";
+                                        document.getElementById('Voice').innerHTML = "";
+                                        var opt = document.createElement('option');
+                                        opt.value = "";
+                                        opt.innerHTML = "Voice";
+                                        document.getElementById('Voice').appendChild(opt);
                                         for (var i = 0; i < response.length; i++) {
                                             var opt = document.createElement('option');
                                             opt.value = response[i].languageCode;
@@ -264,7 +293,7 @@
                                         }
                                     }
                                     else {
-                                        jQuery.notify("Please try again", { position: "bottom right", className: "warn" });
+                                        jQuery.notify("Please try again", { position: "top right", className: "warn" });
                                         HideLoader();
                                     }
                                 }
@@ -280,10 +309,12 @@
                     var Language = this.value;
                     var gender = $('#Gender').find(":selected").val();
                     if (Language == "") {
-                        jQuery.notify("Please Select a valid Language", { position: "bottom right", className: "warn" });
+                        jQuery.notify("Please Select a valid Language", { position: "top right", className: "warn" });
+                        HideLoader();
                     }
                     if (gender == "") {
-                        jQuery.notify("Please Select a valid Gender", { position: "bottom right", className: "warn" });
+                        jQuery.notify("Please Select a valid Gender", { position: "top right", className: "warn" });
+                        HideLoader();
                     }
                     if (gender != "" && Language != "") {
                         $.ajax(
@@ -305,7 +336,7 @@
                                         HideLoader();
                                     }
                                     else {
-                                        jQuery.notify("Please try again", { position: "bottom right", className: "warn" });
+                                        jQuery.notify("Please try again", { position: "top right", className: "warn" });
                                         HideLoader();
                                     }
                                 }
@@ -327,10 +358,24 @@
                     var text = $('#validationTextarea')[0].value;
                     var ProjectName = $('#ProjectName')[0].value;
                     var voiceId = $('#Voice').find(":selected").val();
-                    if (ProjectName == "") {
-                        jQuery.notify("Provide a name please", { position: "bottom right", className: "warn" });
+                    var gender = $('#Gender').find(":selected").val();
+                    if (Language == "") {
+                        jQuery.notify("Please Select a valid Language", { position: "top right", className: "warn" });
+                        HideLoader();
                     }
-                    else if (text != "" && voiceId != "") {
+                    if (gender == "") {
+                        jQuery.notify("Please Select a valid Gender", { position: "top right", className: "warn" });
+                        HideLoader();
+                    }
+                    if (ProjectName == "") {
+                        jQuery.notify("Provide a name please", { position: "top right", className: "warn" });
+                        HideLoader();
+                    }
+                    if (voiceId == "") {
+                        jQuery.notify("Provide a voice please", { position: "top right", className: "warn" });
+                        HideLoader();
+                    }
+                    else if (text != "" && voiceId != "" && gender != "" && ProjectName != "") {
                         $.ajax(
                             {
                                 type: "Post", //HTTP POST Method
@@ -355,7 +400,7 @@
                                         $/*('#AudioStream')[0].oncanplaythrough=audio[0].play();*/
                                     }
                                     else {
-                                        jQuery.notify("Please try again", { position: "bottom right", className: "warn" });
+                                        jQuery.notify("Please try again", { position: "top right", className: "warn" });
                                         HideLoader();
                                     }
                                 }

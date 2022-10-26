@@ -76,13 +76,15 @@ namespace Scribe_Factory_Core.Controllers
 
                 //get details of voice from voiceID
                 var voice = StaticVoiceDetails.AllVoices.Where(x => x.Id == VoiceId).FirstOrDefault();
-                aws.ConvertTextToSpeech(text, voice.LanguageCode, voice.Name, voice.Engine.FirstOrDefault(), BucketName, projectId + "_" + projectName + ".mp3");
+                var issaved =aws.ConvertTextToSpeech(text, voice.LanguageCode, voice.Name, voice.Engine.FirstOrDefault(), BucketName, projectId + "_" + projectName + ".mp3");
                 ViewBag.ProjectId = projectId;
-                return new JsonResult(projectId);
+
+                return RedirectToAction("Dashboard", "Home");
+                return Json(issaved);
             }
             catch
             {
-                return new JsonResult(false);
+                return Json(false);
 
             }
         }
@@ -101,14 +103,12 @@ namespace Scribe_Factory_Core.Controllers
                 MemoryStream ms = new MemoryStream(UTF8Encoding.UTF8.GetBytes(text));
                 aws.sendMyFileToS3(ms, BucketName, "", projectId + "_" + projectName + ".txt");
                 projectManagementRepository.SaveProjectFile(projectId + "_" + projectName + ".txt", projectId);
-
-
-
-                return new JsonResult(projectId);
+                return RedirectToAction("Dashboard","Home");
+                return Json(true);
             }
             catch
             {
-                return new JsonResult(false);
+                return Json(false);
 
             }
         }
@@ -207,7 +207,6 @@ namespace Scribe_Factory_Core.Controllers
             }
             catch
             {
-
                 return Json(false);
             }
         }

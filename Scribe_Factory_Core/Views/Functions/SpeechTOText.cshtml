@@ -104,7 +104,7 @@
     <script src="/js/notify-combined.min.js"></script>
     <script type="text/javascript">
 
-        //jQuery.notify.notify("Click me!", { position: "bottom right", className: "success" });
+        //jQuery.notify.notify("Click me!", { position: "top right", className: "success" });
         $(document).ready(function () {
             //$("#FileUploadForm").submit(function (e) {
             //    e.preventDefault();
@@ -119,8 +119,9 @@
                 var files = fileUpload.files;
                 if (files.length == 0) {
 
-                    //jQuery.notify.notify.defaults({ globalPosition: 'bottom right' });
-                    jQuery.notify("Please upload a file first!", { position: "bottom right", className: "warn" });
+                    //jQuery.notify.notify.defaults({ globalPosition: 'top right' });
+                    jQuery.notify("Please upload a file first!", { position: "top right", className: "warn" });
+                    HideLoader();
                 }
                 if (files.length != 0) {
                     var fileData = new FormData();
@@ -146,7 +147,7 @@
                                     HideLoader();
                                 }
                                 else {
-                                    jQuery.notify("Please try again", { position: "bottom right", className: "warn" });
+                                    jQuery.notify("Please try again", { position: "top right", className: "warn" });
                                     HideLoader();
                                 }
                             }
@@ -161,9 +162,14 @@
                 var text = $('#validationTextarea')[0].value;
                 var ProjectName = $('#ProjectName')[0].value;
                 if (ProjectName == "") {
-                    jQuery.notify("Provide a name please", { position: "bottom right", className: "warn" });
+                    jQuery.notify("Provide a name please", { position: "top right", className: "warn" });
+                    HideLoader();
                 }
-                else if (text != "") {
+                else if (text == "") {
+                    jQuery.notify("Provide a text please", { position: "top right", className: "warn" });
+                    HideLoader();
+                }
+                else if (text != "" && ProjectName != "") {
                     $.ajax(
                         {
                             type: "Post", //HTTP POST Method
@@ -177,17 +183,20 @@
                             success: function (response) {
                                 debugger;
                                 if (response != false) {
-                                    jQuery.notify("Project Created Successfully", { position: "bottom right", className: "success" });
+                                    jQuery.notify("Project Created Successfully", { position: "top right", className: "success" });
                                     window.location = "/Home/Dashboard";
                                     HideLoader();
                                     debugger;
                                 }
                                 else {
-                                    jQuery.notify("Please try again", { position: "bottom right", className: "warn" });
+                                    jQuery.notify("Please try again", { position: "top right", className: "warn" });
                                     HideLoader();
                                 }
                             }
                         });
+                }
+                else {
+                    HideLoader();
                 }
             });
 

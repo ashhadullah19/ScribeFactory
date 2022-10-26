@@ -166,7 +166,7 @@
         <script src="/js/notify-combined.min.js"></script>
         <script type="text/javascript">
 
-            //jQuery.notify.notify("Click me!", { position: "bottom right", className: "success" });
+            //jQuery.notify.notify("Click me!", { position: "top right", className: "success" });
             $(document).ready(function () {
                 $("#ConvertText").click(function () {
                     debugger;
@@ -176,17 +176,21 @@
                     var FromLangugae = $('#LanguageFrom').find(":selected").val();
                     var ToLanguage = $('#LanguageTo').find(":selected").val();
                     if (ProjectName == "") {
-                        jQuery.notify("Provide a name please", { position: "bottom right", className: "warn" });
+                        jQuery.notify("Provide a name please", { position: "top right", className: "warn" });
+                        HideLoader();
                     }
                     else if (FromLangugae == "") {
-                        jQuery.notify("Select a language please", { position: "bottom right", className: "warn" });
+                        jQuery.notify("Select a language please", { position: "top right", className: "warn" });
+                        HideLoader();
                     }
                     else if (LanguageTo == "") {
-                        jQuery.notify("Select a language please", { position: "bottom right", className: "warn" });
+                        jQuery.notify("Select a language please", { position: "top right", className: "warn" });
+                        HideLoader();
                     }
 
                     else if (text == "") {
-                        jQuery.notify("Provide some content first!", { position: "bottom right", className: "warn" });
+                        jQuery.notify("Provide some content first!", { position: "top right", className: "warn" });
+                        HideLoader();
                     }
                     else {
                         $.ajax(
@@ -209,13 +213,12 @@
                                         debugger;
                                     } else {
 
-                                        jQuery.notify("Please try again", { position: "bottom right", className: "warn" });
+                                        jQuery.notify("Please try again", { position: "top right", className: "warn" });
                                         HideLoader();
                                     }
                                 }
                             });
                     }
-                    HideLoader();
                 });
                 $("#Save").click(function () {
                     debugger;
@@ -225,17 +228,21 @@
                     var FromLangugae = $('#LanguageFrom').find(":selected").val();
                     var ToLanguage = $('#LanguageTo').find(":selected").val();
                     if (ProjectName == "") {
-                        jQuery.notify("Provide a name please", { position: "bottom right", className: "warn" });
+                        jQuery.notify("Provide a name please", { position: "top right", className: "warn" });
+                        HideLoader();
                     }
                     else if (FromLangugae == "") {
-                        jQuery.notify("Select a language please", { position: "bottom right", className: "warn" });
+                        jQuery.notify("Select a language please", { position: "top right", className: "warn" });
+                        HideLoader();
                     }
                     else if (LanguageTo == "") {
-                        jQuery.notify("Select a language please", { position: "bottom right", className: "warn" });
+                        jQuery.notify("Select a language please", { position: "top right", className: "warn" });
+                        HideLoader();
                     }
 
                     else if (Convertedtext == "") {
-                        jQuery.notify("Provide some content first!", { position: "bottom right", className: "warn" });
+                        jQuery.notify("Provide some content first!", { position: "top right", className: "warn" });
+                        HideLoader();
                     }
                     else {
                         $.ajax(
@@ -250,14 +257,14 @@
                                 success: function (response) {
                                     debugger;
                                     if (response != false) {
-                                        jQuery.notify("Project Created Successfully", { position: "bottom right", className: "success" });
                                         window.location = "/Home/Dashboard";
+                                        jQuery.notify("Project Created Successfully", { position: "top right", className: "success" });
                                         HideLoader();
                                         debugger;
                                     }
                                     else {
 
-                                        jQuery.notify("Please try again", { position: "bottom right", className: "warn" });
+                                        jQuery.notify("Please try again", { position: "top right", className: "warn" });
                                         HideLoader();
                                     }
                                 }
