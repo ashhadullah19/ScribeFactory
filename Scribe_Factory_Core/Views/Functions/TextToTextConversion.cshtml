@@ -220,7 +220,8 @@
                             });
                     }
                 });
-                $("#Save").click(function () {
+                $("#Save").click(function (e) {
+                    e.preventDefault();
                     debugger;
                     ShowLoader();
                     var Convertedtext = $('#ConvertedText')[0].value;

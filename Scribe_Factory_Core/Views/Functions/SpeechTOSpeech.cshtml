@@ -196,7 +196,8 @@
 
                 });
 
-                $("#SaveProject").click(function () {
+                $("#SaveProject").click(function (e) {
+                    e.preventDefault();
                     debugger;
 
                     ShowLoader();
