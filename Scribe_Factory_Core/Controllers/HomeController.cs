@@ -40,9 +40,26 @@ namespace Scribe_Factory_Core.Controllers
             var currentUser = SessionHelper.GetObject<UserLoginViewModel>(HttpContext.Session, "CurrentUser");
             if (currentUser != null)
             {
-                var ALLusers = ProjectManagementRepository.GetProjectsByFilter(currentUser,projectname,type,date);
-                return PartialView("DashboardProjects",ALLusers);
-                
+                var ALLusers = ProjectManagementRepository.GetProjectsByFilter(currentUser, projectname, type, date);
+                return PartialView("DashboardProjects", ALLusers);
+
+            }
+            else
+            {
+                return PartialView("DashboardProjects", new List<Project>());
+            }
+
+        }
+
+        [HttpGet]
+        public IActionResult ResetDashboard()
+        {
+            var currentUser = SessionHelper.GetObject<UserLoginViewModel>(HttpContext.Session, "CurrentUser");
+            if (currentUser != null)
+            {
+                var ALLusers = ProjectManagementRepository.GetProjects(currentUser);
+                return PartialView("DashboardProjects", ALLusers);
+
             }
             else
             {

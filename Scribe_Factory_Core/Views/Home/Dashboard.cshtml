@@ -48,25 +48,29 @@
 
             <select name="Type" id="Type">
                 <option value="">Type</option>
-                <option value="Speech to Speech">Speech to Speech</option>
-                <option value="Speech to Text">Speech to Text</option>
-                <option value="Text to Speech">Text to Speech</option>
-                <option value="Text to Text">Text to Text</option>
+                <option value="Speech To Speech">Speech To Speech</option>
+                <option value="Speech To Text">Speech To Text</option>
+                <option value="Text To Speech">Text To Speech</option>
+                <option value="Text To Text">Text To Text</option>
             </select>
             <input type="text" name="ProjectName" id="ProjectName" placeholder="Project Name" style="width: 20%;
         padding: 8px;
         border-radius: 10px;
-        border: 1px solid rgba(0, 0, 0, .1) !important; margin-right:20px" required>
+        border: 1px solid rgba(0, 0, 0, .1) !important; margin-right:5%" required>
             <input type="date" name="Date" id="Date" placeholder="Create on" style="width: 20%;
         padding: 8px;
         border-radius: 10px;
-        border: 1px solid rgba(0, 0, 0, .1) !important;margin-right:25%;" required>
-            <div style="justify-content:flex-end">
+        border: 1px solid rgba(0, 0, 0, .1) !important;margin-right:20%;" required>
+            <div style="justify-content:flex-end ;margin-right:3%">
                 <a href="" class="xport-main-div">
                     <button id="Search">Search</button>
                 </a>
             </div>
-
+            <div style="justify-content:flex-end">
+                <a href="" class="xport-main-div">
+                    <button id="Reset">Reset</button>
+                </a>
+            </div>
         </div>
 
     </div>
@@ -106,7 +110,7 @@
         }
 
     .txt-speech-div-selct select {
-        margin-right: 20px;
+        margin-right: 5%;
         border: 1px solid rgba(0, 0, 0, .1) !important;
         color: gray;
         width: 150px;
@@ -209,7 +213,6 @@
         $('#Search').prop("disabled", true);
     </script>
 }
-}
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -219,6 +222,30 @@
         function DownloadFile(projectId) {
             debugger;
         };
+
+        $("#Reset").click(function (e) {
+            debugger;
+            e.preventDefault();
+            ShowLoader();
+
+            $.ajax(
+                {
+                    type: "Get", //HTTP POST Method
+                    url: "ResetDashboard", // Controller/View
+                    success: function (response) {
+                        debugger;
+                        if (response != "") {
+                            document.getElementById('ProjectsDiv').innerHTML = "";
+                            document.getElementById('ProjectsDiv').innerHTML = response;
+                            HideLoader();
+                        }
+                        else {
+                            jQuery.notify("Please try again", { position: "top right", className: "warn" });
+                            HideLoader();
+                        }
+                    }
+                });
+        });
         $("#Search").click(function (e) {
             debugger;
             e.preventDefault();
