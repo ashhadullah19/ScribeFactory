@@ -1712,7 +1712,7 @@ float: right;
     box-sizing: border-box;
     border: 1px solid #E1E1FB;
     border-radius: 8px;
-    padding: 14px 24px 14px 10px;
+    padding: 10px 10px 15px 10px;
     box-shadow: 5px 7px 4px #888ea8;
 }
 #my-prject .prject-date-div p{
@@ -1881,7 +1881,7 @@ color: #FFA7A7;
     background: transparent;
     border: none;
     overflow: hidden;
-    max-width: 95%;
+    max-width: 100%;
 }
 #functions .str-bin ul{
     list-style: none;

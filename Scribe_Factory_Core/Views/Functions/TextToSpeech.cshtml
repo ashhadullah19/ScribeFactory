@@ -155,6 +155,10 @@
                                     if (response) {
                                         debugger;
                                         document.getElementById('Language').innerHTML = "";
+                                        var opt = document.createElement('option');
+                                        opt.value = "";
+                                        opt.innerHTML = "Language";
+                                        document.getElementById('Language').appendChild(opt);
                                         document.getElementById('Voice').innerHTML = "";
                                         var opt = document.createElement('option');
                                         opt.value = "";
@@ -201,6 +205,10 @@
                                     if (response) {
                                         debugger;
                                         document.getElementById('Voice').innerHTML = "";
+                                        var opt = document.createElement('option');
+                                        opt.value = "";
+                                        opt.innerHTML = "Voice";
+                                        document.getElementById('Voice').appendChild(opt);
                                         for (var i = 0; i < response.length; i++) {
                                             var opt = document.createElement('option');
                                             opt.value = response[i].id;
@@ -335,8 +343,9 @@
                                     debugger;
                                     if (response != false) {
                                         jQuery.notify("Project Created Successfully", { position: "top right", className: "success" });
-                                        window.location = "/Home/Dashboard";
+
                                         HideLoader();
+                                        window.location = "/Home/Dashboard";
                                         debugger;
                                     }
                                     else {

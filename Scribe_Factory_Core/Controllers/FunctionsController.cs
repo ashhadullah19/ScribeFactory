@@ -79,7 +79,6 @@ namespace Scribe_Factory_Core.Controllers
                 var issaved =aws.ConvertTextToSpeech(text, voice.LanguageCode, voice.Name, voice.Engine.FirstOrDefault(), BucketName, projectId + "_" + projectName + ".mp3");
                 ViewBag.ProjectId = projectId;
 
-                return RedirectToAction("Dashboard", "Home");
                 return Json(issaved);
             }
             catch

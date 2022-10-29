@@ -14,7 +14,9 @@ namespace Scribe_Factory_Core.Repositories.Interfaces
         public int SaveProject(string projectName, string projectType, long tenantId);
         public List<Languages> GetLanguagesFromDB();
         public int SaveProjectFile(string projectFile, long projectId);
+        public List<DashbaordProjectCountViewModel> GetProjectsByCategoryCount(UserLoginViewModel currentuser);
         public ProjectFiles getProjectFile(int projectId);
+        public List<Project> GetProjectsByFilter(UserLoginViewModel currentuser, string projectname, string type, string date);
 
     }
 }

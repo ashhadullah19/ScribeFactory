@@ -1,288 +1,280 @@
 ﻿USE [ScribeDB]
 GO
-SET IDENTITY_INSERT [dbo].[Tenants] ON 
-GO
-INSERT [dbo].[Tenants] ([Id], [Name], [CreatedDate], [IsActive]) VALUES (2, N'Test1', CAST(N'2022-09-24T00:00:00.0000000' AS DateTime2), 1)
-GO
-SET IDENTITY_INSERT [dbo].[Tenants] OFF
-GO
 SET IDENTITY_INSERT [dbo].[ApplicatioUsers] ON 
 GO
-INSERT [dbo].[ApplicatioUsers] ([Id], [TenantId], [FirstName], [LastName], [Email], [PasswordHash], [Country], [City], [State], [Zip]) VALUES (1, 2, N'Ashhad', N'Ullah', N'ashhad@gmail.com', N'253acb401ca5ef629fb17e520cfc64e6', N'Pakistan', N'Karachi', NULL, NULL)
-GO
-INSERT [dbo].[ApplicatioUsers] ([Id], [TenantId], [FirstName], [LastName], [Email], [PasswordHash], [Country], [City], [State], [Zip]) VALUES (4, 2, N'ashhad', N'ullah', N'ashhad1@gmail.com', N'253acb401ca5ef629fb17e520cfc64e6', N'Pakistan', N'Karachi', N'Sindh', N'74600')
+INSERT [dbo].[ApplicatioUsers] ([Id], [FirstName], [LastName], [Email], [PasswordHash], [Country], [City], [State], [Zip], [CreatedOn]) VALUES (1, N'Ashhad', N'Ullah', N'ashhad@gmail.com', N'253acb401ca5ef629fb17e520cfc64e6', N'Pakistan', N'Karachi', NULL, NULL, CAST(N'2022-10-02T00:42:15.2533333' AS DateTime2))
 GO
 SET IDENTITY_INSERT [dbo].[ApplicatioUsers] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Languages] ON 
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Afrikaans', N'af', 1)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (1, N'af', N'Afrikaans')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Albanian', N'sq', 2)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (2, N'sq', N'Albanian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Amharic', N'am', 3)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (3, N'am', N'Amharic')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Arabic', N'ar', 4)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (4, N'ar', N'Arabic')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Armenian', N'hy', 5)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (5, N'hy', N'Armenian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Assamese*', N'as', 6)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (6, N'as', N'Assamese*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Aymara*', N'ay', 7)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (7, N'ay', N'Aymara*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Azerbaijani', N'az', 8)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (8, N'az', N'Azerbaijani')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Bambara*', N'bm', 9)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (9, N'bm', N'Bambara*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Basque', N'eu', 10)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (10, N'eu', N'Basque')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Belarusian', N'be', 11)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (11, N'be', N'Belarusian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Bengali', N'bn', 12)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (12, N'bn', N'Bengali')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Bhojpuri*', N'bho', 13)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (13, N'bho', N'Bhojpuri*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Bosnian', N'bs', 14)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (14, N'bs', N'Bosnian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Bulgarian', N'bg', 15)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (15, N'bg', N'Bulgarian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Catalan', N'ca', 16)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (16, N'ca', N'Catalan')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Cebuano', N'ceb', 17)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (17, N'ceb', N'Cebuano')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Chinese (Simplified)', N'zh-CN', 18)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (18, N'zh-CN', N'Chinese (Simplified)')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Chinese (Traditional)', N'zh-TW', 19)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (19, N'zh-TW', N'Chinese (Traditional)')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Corsican', N'co', 20)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (20, N'co', N'Corsican')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Croatian', N'hr', 21)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (21, N'hr', N'Croatian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Czech', N'cs', 22)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (22, N'cs', N'Czech')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Danish', N'da', 23)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (23, N'da', N'Danish')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Dhivehi*', N'dv', 24)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (24, N'dv', N'Dhivehi*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Dogri*', N'doi', 25)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (25, N'doi', N'Dogri*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Dutch', N'nl', 26)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (26, N'nl', N'Dutch')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'English', N'en', 27)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (27, N'en', N'English')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Esperanto', N'eo', 28)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (28, N'eo', N'Esperanto')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Estonian', N'et', 29)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (29, N'et', N'Estonian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Ewe*', N'ee', 30)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (30, N'ee', N'Ewe*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Filipino (Tagalog)', N'fil', 31)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (31, N'fil', N'Filipino (Tagalog)')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Finnish', N'fi', 32)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (32, N'fi', N'Finnish')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'French', N'fr', 33)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (33, N'fr', N'French')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Frisian', N'fy', 34)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (34, N'fy', N'Frisian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Galician', N'gl', 35)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (35, N'gl', N'Galician')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Georgian', N'ka', 36)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (36, N'ka', N'Georgian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'German', N'de', 37)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (37, N'de', N'German')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Greek', N'el', 38)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (38, N'el', N'Greek')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Guarani*', N'gn', 39)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (39, N'gn', N'Guarani*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Gujarati', N'gu', 40)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (40, N'gu', N'Gujarati')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Haitian Creole', N'ht', 41)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (41, N'ht', N'Haitian Creole')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Hausa', N'ha', 42)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (42, N'ha', N'Hausa')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Hawaiian', N'haw', 43)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (43, N'haw', N'Hawaiian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Hebrew', N'he or iw', 44)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (44, N'he or iw', N'Hebrew')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Hindi', N'hi', 45)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (45, N'hi', N'Hindi')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Hmong', N'hmn', 46)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (46, N'hmn', N'Hmong')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Hungarian', N'hu', 47)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (47, N'hu', N'Hungarian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Icelandic', N'is', 48)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (48, N'is', N'Icelandic')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Igbo', N'ig', 49)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (49, N'ig', N'Igbo')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Ilocano*', N'ilo', 50)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (50, N'ilo', N'Ilocano*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Indonesian', N'id', 51)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (51, N'id', N'Indonesian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Irish', N'ga', 52)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (52, N'ga', N'Irish')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Italian', N'it', 53)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (53, N'it', N'Italian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Japanese', N'ja', 54)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (54, N'ja', N'Japanese')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Javanese', N'jv', 55)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (55, N'jv', N'Javanese')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Kannada', N'kn', 56)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (56, N'kn', N'Kannada')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Kazakh', N'kk', 57)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (57, N'kk', N'Kazakh')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Khmer', N'km', 58)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (58, N'km', N'Khmer')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Kinyarwanda', N'rw', 59)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (59, N'rw', N'Kinyarwanda')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Konkani*', N'gom', 60)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (60, N'gom', N'Konkani*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Korean', N'ko', 61)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (61, N'ko', N'Korean')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Krio*', N'kri', 62)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (62, N'kri', N'Krio*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Kurdish', N'ku', 63)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (63, N'ku', N'Kurdish')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Kurdish (Sorani)*', N'ckb', 64)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (64, N'ckb', N'Kurdish (Sorani)*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Kyrgyz', N'ky', 65)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (65, N'ky', N'Kyrgyz')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Lao', N'lo', 66)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (66, N'lo', N'Lao')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Latin', N'la', 67)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (67, N'la', N'Latin')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Latvian', N'lv', 68)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (68, N'lv', N'Latvian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Lingala*', N'ln', 69)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (69, N'ln', N'Lingala*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Lithuanian', N'lt', 70)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (70, N'lt', N'Lithuanian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Luganda*', N'lg', 71)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (71, N'lg', N'Luganda*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Luxembourgish', N'lb', 72)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (72, N'lb', N'Luxembourgish')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Macedonian', N'mk', 73)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (73, N'mk', N'Macedonian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Maithili*', N'mai', 74)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (74, N'mai', N'Maithili*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Malagasy', N'mg', 75)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (75, N'mg', N'Malagasy')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Malay', N'ms', 76)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (76, N'ms', N'Malay')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Malayalam', N'ml', 77)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (77, N'ml', N'Malayalam')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Maltese', N'mt', 78)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (78, N'mt', N'Maltese')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Maori', N'mi', 79)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (79, N'mi', N'Maori')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Marathi', N'mr', 80)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (80, N'mr', N'Marathi')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Meiteilon (Manipuri)*', N'mni-Mtei', 81)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (81, N'mni-Mtei', N'Meiteilon (Manipuri)*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Mizo*', N'lus', 82)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (82, N'lus', N'Mizo*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Mongolian', N'mn', 83)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (83, N'mn', N'Mongolian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Myanmar (Burmese)', N'my', 84)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (84, N'my', N'Myanmar (Burmese)')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Nepali', N'ne', 85)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (85, N'ne', N'Nepali')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Norwegian', N'no', 86)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (86, N'no', N'Norwegian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Nyanja (Chichewa)', N'ny', 87)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (87, N'ny', N'Nyanja (Chichewa)')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Odia (Oriya)', N'or', 88)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (88, N'or', N'Odia (Oriya)')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Oromo*', N'om', 89)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (89, N'om', N'Oromo*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Pashto', N'ps', 90)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (90, N'ps', N'Pashto')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Persian', N'fa', 91)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (91, N'fa', N'Persian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Polish', N'pl', 92)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (92, N'pl', N'Polish')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Portuguese (Portugal', N' Brazil)', 93)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (93, N' Brazil)', N'Portuguese (Portugal')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Punjabi', N'pa', 94)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (94, N'pa', N'Punjabi')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Quechua*', N'qu', 95)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (95, N'qu', N'Quechua*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Romanian', N'ro', 96)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (96, N'ro', N'Romanian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Russian', N'ru', 97)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (97, N'ru', N'Russian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Samoan', N'sm', 98)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (98, N'sm', N'Samoan')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Sanskrit*', N'sa', 99)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (99, N'sa', N'Sanskrit*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Scots Gaelic', N'gd', 100)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (100, N'gd', N'Scots Gaelic')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Sepedi*', N'nso', 101)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (101, N'nso', N'Sepedi*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Serbian', N'sr', 102)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (102, N'sr', N'Serbian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Sesotho', N'st', 103)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (103, N'st', N'Sesotho')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Shona', N'sn', 104)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (104, N'sn', N'Shona')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Sindhi', N'sd', 105)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (105, N'sd', N'Sindhi')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Sinhala (Sinhalese)', N'si', 106)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (106, N'si', N'Sinhala (Sinhalese)')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Slovak', N'sk', 107)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (107, N'sk', N'Slovak')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Slovenian', N'sl', 108)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (108, N'sl', N'Slovenian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Somali', N'so', 109)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (109, N'so', N'Somali')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Spanish', N'es', 110)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (110, N'es', N'Spanish')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Sundanese', N'su', 111)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (111, N'su', N'Sundanese')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Swahili', N'sw', 112)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (112, N'sw', N'Swahili')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Swedish', N'sv', 113)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (113, N'sv', N'Swedish')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Tagalog (Filipino)', N'tl', 114)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (114, N'tl', N'Tagalog (Filipino)')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Tajik', N'tg', 115)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (115, N'tg', N'Tajik')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Tamil', N'ta', 116)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (116, N'ta', N'Tamil')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Tatar', N'tt', 117)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (117, N'tt', N'Tatar')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Telugu', N'te', 118)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (118, N'te', N'Telugu')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Thai', N'th', 119)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (119, N'th', N'Thai')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Tigrinya*', N'ti', 120)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (120, N'ti', N'Tigrinya*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Tsonga*', N'ts', 121)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (121, N'ts', N'Tsonga*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Turkish', N'tr', 122)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (122, N'tr', N'Turkish')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Turkmen', N'tk', 123)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (123, N'tk', N'Turkmen')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Twi (Akan)*', N'ak', 124)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (124, N'ak', N'Twi (Akan)*')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Ukrainian', N'uk', 125)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (125, N'uk', N'Ukrainian')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Urdu', N'ur', 126)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (126, N'ur', N'Urdu')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Uyghur', N'ug', 127)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (127, N'ug', N'Uyghur')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Uzbek', N'uz', 128)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (128, N'uz', N'Uzbek')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Vietnamese', N'vi', 129)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (129, N'vi', N'Vietnamese')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Welsh', N'cy', 130)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (130, N'cy', N'Welsh')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Xhosa', N'xh', 131)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (131, N'xh', N'Xhosa')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Yiddish', N'yi', 132)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (132, N'yi', N'Yiddish')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Yoruba', N'yo', 133)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (133, N'yo', N'Yoruba')
 GO
-INSERT [dbo].[Languages] ([LangaugeName], [LanguageId], [Id]) VALUES (N'Zulu', N'zu', 134)
+INSERT [dbo].[Languages] ([Id], [LanguageID], [LanguageName]) VALUES (134, N'zu', N'Zulu')
 GO
 SET IDENTITY_INSERT [dbo].[Languages] OFF
 GO

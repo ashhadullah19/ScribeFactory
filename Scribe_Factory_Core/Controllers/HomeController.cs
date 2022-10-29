@@ -24,22 +24,52 @@ namespace Scribe_Factory_Core.Controllers
         AWSHelper aws = null;
         string BucketName = "";
         private IProjectManagementRepository ProjectManagementRepository;
-        public HomeController(ILogger<HomeController> logger, IConfiguration configuration,IProjectManagementRepository projectManagementRepository)
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration, IProjectManagementRepository projectManagementRepository)
         {
             _logger = logger;
             Configuration = configuration;
             var Accesskey = Configuration["AWSPollyAccessKey"];
             var SecretKey = Configuration["AWSPollySecretKey"];
             BucketName = Configuration["S3BucketName"];
-            aws = new AWSHelper(Accesskey,SecretKey);
+            aws = new AWSHelper(Accesskey, SecretKey);
             this.ProjectManagementRepository = projectManagementRepository;
         }
+        [HttpPost]
+        public IActionResult GetProjectsbyFilter(string projectname, string date, string type)
+        {
+            var currentUser = SessionHelper.GetObject<UserLoginViewModel>(HttpContext.Session, "CurrentUser");
+            if (currentUser != null)
+            {
+                var ALLusers = ProjectManagementRepository.GetProjectsByFilter(currentUser,projectname,type,date);
+                return PartialView("DashboardProjects",ALLusers);
+                
+            }
+            else
+            {
+                return PartialView("DashboardProjects", new List<Project>());
+            }
 
+        }
         public IActionResult Dashboard()
         {
             var currentUser = SessionHelper.GetObject<UserLoginViewModel>(HttpContext.Session, "CurrentUser");
-            if(currentUser != null) { 
-            var ALLusers = ProjectManagementRepository.GetProjects(currentUser);
+            if (currentUser != null)
+            {
+                var ALLusers = ProjectManagementRepository.GetProjects(currentUser);
+                var data = ProjectManagementRepository.GetProjectsByCategoryCount(currentUser);
+
+                var speechtospeech = data.Where(x => x.ProjectType == "Speech To Speech").FirstOrDefault();
+                ViewBag.SpeechToSpeechCount = speechtospeech != null ? speechtospeech.Count : 0;
+                var textospeech = data.Where(x => x.ProjectType == "Text To Speech").FirstOrDefault();
+                ViewBag.TextToSpeechCount = textospeech != null ? textospeech.Count : 0;
+                var speechtotext = data.Where(x => x.ProjectType == "Speech To Text").FirstOrDefault();
+                ViewBag.SpeechToTextCount = speechtotext != null ? speechtotext.Count : 0;
+                var TextToText = data.Where(x => x.ProjectType == "Text To Text").FirstOrDefault();
+                ViewBag.TextToTextCount = TextToText != null ? TextToText.Count : 0;
+                if (Request.Headers["Referer"].ToString().Contains("Functions"))
+                {
+                    ViewBag.ScrollDown = "true";
+                }
                 return View(ALLusers);
             }
             else
@@ -49,7 +79,7 @@ namespace Scribe_Factory_Core.Controllers
             }
         }
 
-       
+
 
         public IActionResult Privacy()
         {
@@ -74,7 +104,7 @@ namespace Scribe_Factory_Core.Controllers
 
                 //var document = _aws3Services.DownloadFileAsync(documentName).Result;
                 var file = ProjectManagementRepository.getProjectFile(projectid);
-                if(file != null)
+                if (file != null)
                 {
                     aws.DownloadObject(file.FileUrl, BucketName);
                     var bytes = System.IO.File.ReadAllBytes(file.FileUrl);
